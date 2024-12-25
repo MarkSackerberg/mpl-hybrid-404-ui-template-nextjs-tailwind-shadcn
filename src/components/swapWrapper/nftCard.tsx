@@ -32,7 +32,7 @@ const NftCard = (props: NftCardProps) => {
         />
         <div>
           <div className="text-lg">
-            {props.tradeState === TradeState.tokens && escrow?.path === 1 ? (
+            {props.tradeState === TradeState.tokens && escrow?.path === 0 ? (
               "Receive Random NFT"
             ) : props.selectedAsset ? (
               props.selectedAsset.content.metadata.name
@@ -48,7 +48,7 @@ const NftCard = (props: NftCardProps) => {
   return (
     <>
       {props.tradeState === TradeState.nft ||
-      (props.tradeState === TradeState.tokens && escrow?.path === 0) ? (
+      (props.tradeState === TradeState.tokens && escrow?.path === 1) ? (
         <NftPicker
           wallet={props.tradeState === TradeState.nft ? "user" : "escrow"}
           setSelectedAsset={(selectedNft) => {

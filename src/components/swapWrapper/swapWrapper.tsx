@@ -38,7 +38,7 @@ const SwapWrapper = () => {
         return;
       }
     } else {
-      if (escrow?.path === 0 && !selectedAsset) {
+      if (escrow?.path === 1 && !selectedAsset) {
         toast({
           title: "No NFT selected",
           description: "Please select an NFT to receive",

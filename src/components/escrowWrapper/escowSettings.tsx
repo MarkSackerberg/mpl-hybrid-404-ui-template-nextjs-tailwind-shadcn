@@ -46,7 +46,7 @@ const EscrowSettings = () => {
           </div>
           <div>
             ReRoll Enabled:{" "}
-            <span>{escrowData.path === 0 ? "false" : "true"}</span>
+            <span>{escrowData.path === 1 ? "false" : "true"}</span>
           </div>
         </div>
       )}
