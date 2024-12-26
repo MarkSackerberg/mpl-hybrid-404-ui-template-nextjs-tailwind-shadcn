@@ -59,7 +59,7 @@ const NftPicker = ({
       });
     }
   }, [isOpen, wallet]);
-  console.log(assets?.items[0]);
+
   const assetList = assets?.items
     .sort((a, b) =>
       a.content.metadata.name.localeCompare(
