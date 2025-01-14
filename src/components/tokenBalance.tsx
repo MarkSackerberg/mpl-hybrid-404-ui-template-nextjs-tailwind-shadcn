@@ -10,7 +10,7 @@ import { formatTokenAmount } from "@/lib/utils";
 
 const TokenBalance = () => {
   const umiSigner = useUmiStore().signer;
-  const { updateTokenAccount, tokenAccount } = useTokenStore();
+  const { updateTokenAccount, tokenAccount, tokenAsset } = useTokenStore();
 
   useEffect(() => {
     if (!umiSigner) {
@@ -39,11 +39,11 @@ const TokenBalance = () => {
         className="aspect-square w-8 h-8 rounded-full"
         alt="token image"
       />
-      {tokenAccount || tokenAccount === null ? (
+      {(tokenAccount || tokenAccount === null) && tokenAsset ? (
         <div className="w-full text-center">
           {tokenAccount === null
             ? "0"
-            : "Balance: " +  formatTokenAmount(tokenAccount.amount, 6)}
+            : "Balance: " +  formatTokenAmount(tokenAccount.amount, tokenAsset.token_info.decimals)}
         </div>
       ) : (
         <Skeleton className="w-full min-w-[150px] h-8" />

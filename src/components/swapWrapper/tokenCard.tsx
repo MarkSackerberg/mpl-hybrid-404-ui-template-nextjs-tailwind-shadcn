@@ -44,7 +44,7 @@ const TokenCard = (props: TokenCardProps) => {
 
       {escrow && tokenAsset && !loading ? (
         <div className="flex flex-col">
-          {formatTokenAmount(escrow.amount, tokenAsset?.token_info.decimals)}{" "}
+          {formatTokenAmount(escrow.amount, tokenAsset.token_info.decimals)}{" "}
           {tokenAsset?.content.metadata.name}
         </div>
       ) : (
