@@ -48,7 +48,7 @@ const TokenEscrowSummary = () => {
         <div>
           Balance:{" "}
           {escrowTokenAccount &&
-            formatTokenAmount(escrowTokenAccount)}
+            formatTokenAmount(escrowTokenAccount.amount, 6)}
         </div>
       </div>
     </Card>
